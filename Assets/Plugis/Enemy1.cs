@@ -12,6 +12,7 @@ public class Enemy1 : Monster
         hurt = 5;
         speed = 10;
         navMesh = FindObjectOfType<NavMeshAgent>();
+        endpoint = GameObject.Find("end");
         navMesh.SetDestination(endpoint.transform.position);
         navMesh.speed = speed;
     }
@@ -19,9 +20,7 @@ public class Enemy1 : Monster
     // Update is called once per frame
     void Update()
     {
-        if (blood <= 0)
-        {
-            Destroy(transform);
-        }
+        
+       
     }
 }

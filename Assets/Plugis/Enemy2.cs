@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemy2 : Monster
 {
@@ -9,7 +10,11 @@ public class Enemy2 : Monster
     {
         blood = 50;
         hurt = 2;
-        speed = 10;
+        speed = 20;
+        navMesh = FindObjectOfType<NavMeshAgent>();
+        endpoint = GameObject.Find("end");
+        navMesh.SetDestination(endpoint.transform.position);
+        navMesh.speed = speed;
     }
 
     // Update is called once per frame

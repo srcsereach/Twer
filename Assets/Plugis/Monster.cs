@@ -15,11 +15,19 @@ public class Monster : MonoBehaviour
     void Awak()
     {
         endpoint = GameObject.Find("end");
+        Debug.Log(endpoint.name);
          
     }
     void LateUpdate()
     {
-       
+        if (blood <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+    private void OnDestroy()
+    {
+        EnemyWaves.countEnemy--;
     }
 
 }
