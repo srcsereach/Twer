@@ -6,10 +6,12 @@ public class EnemyWaves : MonoBehaviour
 {
     public static int countEnemy=0;
     public Wave[] waves;
+    public GameObject birthPlace;
 
     // Start is called before the first frame update
     void Start()
     {
+      
         StartCoroutine("GenerateEnemy");
     }
 
@@ -24,7 +26,7 @@ public class EnemyWaves : MonoBehaviour
         {
             for (int i = wave.count; i > 0; i--)
             {
-                GameObject.Instantiate(wave.enemy,transform.position,Quaternion.identity);
+                GameObject.Instantiate(wave.enemy, birthPlace.transform.position,Quaternion.identity);
                 countEnemy++;
                 yield return new WaitForSeconds(wave.span);
             }
