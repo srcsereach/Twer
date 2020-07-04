@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EndBlood : MonoBehaviour
+public class EndBlood  : MonoBehaviour
 {
-    public int blood =20;
+    public static int blood =20;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +14,7 @@ public class EndBlood : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //GameControll();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -24,4 +24,11 @@ public class EndBlood : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
+    //public void GameControll()
+    //{
+    //    if (blood <= 0)
+    //    {
+             
+    //    }
+    //}
 }

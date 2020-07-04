@@ -14,27 +14,26 @@ public class Monster : MonoBehaviour
     private GameObject  endpoint;
     public GameObject deathEffect;
     public Slider bloodSlider;
+    public GameObject bloodCanvas;
     public NavMeshAgent navMesh;
-    private Transform enemytransform;
+   
 
 
     void Start()
-    {
-        blood = 100;
-        hurt = 5;
-        speed = 10;
+    {      
         endpoint = GameObject.Find("end");
-        Debug.Log(endpoint.name);
-        navMesh = FindObjectOfType<NavMeshAgent>();
-        endpoint = GameObject.Find("end");
+        //navMesh = FindObjectOfType<NavMeshAgent>();?为什么设置会出错----因为是从头开始找物体的
         navMesh.SetDestination(endpoint.transform.position);
         navMesh.speed = speed;
         bloodSlider = GetComponentInChildren<Slider>();
-        enemytransform = this.transform ;
+        bloodSlider.maxValue = blood;
+        bloodSlider.value = blood;
+
+
     }
     private void Update()
     {
-        transform.rotation = new Quaternion(0,0,0,0);
+
     }
     void LateUpdate()
     {
@@ -58,7 +57,7 @@ public class Monster : MonoBehaviour
    public void Damage(float hurt)
     {
         this.blood -= hurt;
-        bloodSlider.value -= hurt / 100;
+        bloodSlider.value -= hurt ;
         Debug.Log(3);
     }
 

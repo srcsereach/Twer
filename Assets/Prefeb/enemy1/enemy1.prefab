@@ -533,14 +533,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170e4bc89ae0cfc4a8a99f535a56e74c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blood: 0
-  hurt: 0
-  speed: 0
+  blood: 100
+  hurt: 2
+  speed: 5
   money: 100
   deathEffect: {fileID: 168842265288147022, guid: 996c3e292f838244195302b01f6851af,
     type: 3}
   bloodSlider: {fileID: 1069827439}
-  navMesh: {fileID: 0}
+  navMesh: {fileID: 2238689167004051703}
 --- !u!54 &4096204674762172034
 Rigidbody:
   m_ObjectHideFlags: 0
